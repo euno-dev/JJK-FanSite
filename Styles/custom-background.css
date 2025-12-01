@@ -1,8 +1,3 @@
-/* styles/custom-background.css
-   Adds an animated GIF background for the entire site.
-   Usage: ensure <link rel="stylesheet" href="styles/custom-background.css"> is in your <head>.
-*/
-
 :root { }
 
 body {
@@ -22,24 +17,14 @@ body {
   }
 }
 
-/* Optional overlay removed so the GIF shows clearly.
-   If you'd like a subtle dim, set the rgba alpha to 0.1-0.3 instead. */
-/* body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  pointer-events: none;
-  z-index: 0;
-} */
+
 
 :where(header, main, footer, .container, .hero) {
   position: relative;
   z-index: 1;
 }
 
-/* Override: disable the purple/animated hero overlay so the GIF shows through.
-   Keeps the `.hero` element and black header/footer bars intact. */
+
 .hero-bg{
   background: transparent !important;
   mix-blend-mode: normal !important;
@@ -48,7 +33,7 @@ body {
   animation: none !important;
 }
 
-/* Remove element-level GIF backgrounds that duplicate the body GIF */
+
 .bgjujutsu,
 .bgjujutsu-2,
 .gifjujutsu {
@@ -56,11 +41,11 @@ body {
   background: transparent !important;
 }
 
-/* Remove the hero wave and any residual hero background that creates a dark band */
+
 .hero-wave{display:none !important}
 .hero-wave path{fill:transparent !important}
 
-/* Ambient occlusion overlay: stronger darkening to add depth over the GIF background */
+
 body::after{
   content: "";
   position: fixed;
@@ -81,3 +66,4 @@ body::after{
 @media (prefers-reduced-motion: reduce){
   body::after{opacity:0.9;filter:none}
 }
+

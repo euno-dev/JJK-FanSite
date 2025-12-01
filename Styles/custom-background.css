@@ -1,0 +1,83 @@
+/* styles/custom-background.css
+   Adds an animated GIF background for the entire site.
+   Usage: ensure <link rel="stylesheet" href="styles/custom-background.css"> is in your <head>.
+*/
+
+:root { }
+
+body {
+  background-image: url('https://i.imgur.com/Ye3KAQ3.gif'), linear-gradient(180deg, var(--bg, #050505), #060606);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, center center;
+  background-size: 100% 100%, 100% 100%;
+  background-attachment: fixed, fixed;
+  background-blend-mode: overlay;
+  color: var(--text-color, #eaeef2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    background-image: url('https://i.imgur.com/Ye3KAQ3.gif');
+    image-rendering: auto;
+  }
+}
+
+/* Optional overlay removed so the GIF shows clearly.
+   If you'd like a subtle dim, set the rgba alpha to 0.1-0.3 instead. */
+/* body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  pointer-events: none;
+  z-index: 0;
+} */
+
+:where(header, main, footer, .container, .hero) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Override: disable the purple/animated hero overlay so the GIF shows through.
+   Keeps the `.hero` element and black header/footer bars intact. */
+.hero-bg{
+  background: transparent !important;
+  mix-blend-mode: normal !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  animation: none !important;
+}
+
+/* Remove element-level GIF backgrounds that duplicate the body GIF */
+.bgjujutsu,
+.bgjujutsu-2,
+.gifjujutsu {
+  background-image: none !important;
+  background: transparent !important;
+}
+
+/* Remove the hero wave and any residual hero background that creates a dark band */
+.hero-wave{display:none !important}
+.hero-wave path{fill:transparent !important}
+
+/* Ambient occlusion overlay: stronger darkening to add depth over the GIF background */
+body::after{
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(44% 34% at 50% 18%, rgba(0,0,0,0.62), transparent 36%),
+    radial-gradient(66% 44% at 50% 86%, rgba(0,0,0,0.72), transparent 46%),
+    radial-gradient(26% 22% at 10% 60%, rgba(0,0,0,0.34), transparent 34%),
+    radial-gradient(26% 22% at 90% 60%, rgba(0,0,0,0.34), transparent 34%);
+  mix-blend-mode: multiply;
+  opacity: 1;
+  filter: blur(6px) saturate(0.9);
+  transition: opacity 300ms ease;
+}
+
+@media (prefers-reduced-motion: reduce){
+  body::after{opacity:0.9;filter:none}
+}

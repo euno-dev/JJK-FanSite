@@ -6,8 +6,9 @@
   <meta name="description" content="Fan site for Jujutsu Kaisen — characters, episodes, fan art.">
   <title>JJK Fan Site — Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <script defer src="js/script.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/custom-background.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -24,31 +25,34 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-content container">
-        <div class="hero-left">
-          <h2 class="hero-title">Jujutsu Kaisen — Tales of Cursed Energy</h2>
-          <p class="hero-sub">Explore characters, episodes, and fan art inspired by the series. This is a student-made fan site — enjoy responsibly.</p>
+    <div class="bgjujutsu">
+      <section class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-content container">
+          <div class="hero-left">
+            <img class="hero-title-img" src="https://i.imgur.com/SXfRlRz.png" alt="Jujutsu Kaisen — Tales of Cursed Energy">
+            <p class="hero-sub">Explore characters, episodes, and fan art inspired by the series. This is a student-made fan site — enjoy responsibly.</p>
+            <p id="greeting" class="greeting small">Hello, Sorcerer!</p>
+          </div>
+
+          <aside class="hero-right">
+            <div class="char-row" aria-hidden="true">
+              <img src="https://lh3.googleusercontent.com/d/1oIWjiJBReATD6w7Xau_MKOmcgqEw8kvJ" alt="Yuji Itadori">
+              <img src="https://lh3.googleusercontent.com/d/1hdpi61AhPcfERSevNTAdnDvsRE6K-Ciu" alt="Megumi Fushiguro">
+              <img src="https://lh3.googleusercontent.com/d/1pfI57JNVJLORSHZYHCytGzHupgS2zNDc" alt="Nobara Kugisaki">
+              <img src="https://lh3.googleusercontent.com/d/1r8qEBbWVNPVqBwjbRxSQn8cwOY82GSYQ" alt="Satoru Gojo">
+            </div>
+            <p class="char-caption">Featured: Yuji, Megumi, Nobara, Gojo</p>
+          </aside>
+
           <div class="hero-ctas">
-            <a class="btn btn-primary" href="characters.html">Meet the Characters</a>
+            <a class="btn btn-primary flash fire" href="characters.html">Meet the Characters</a>
             <a class="btn btn-outline" href="episodes.html">Episode Summaries</a>
           </div>
-          <p id="greeting" class="greeting small">Hello, visitor!</p>
         </div>
-
-        <aside class="hero-right">
-          <div class="char-row" aria-hidden="true">
-            <img src="https://via.placeholder.com/140x200/0b0b0b/ffffff?text=Yuji" alt="Yuji Itadori">
-            <img src="https://via.placeholder.com/140x200/0b0b0b/ffffff?text=Megumi" alt="Megumi Fushiguro">
-            <img src="https://via.placeholder.com/140x200/0b0b0b/ffffff?text=Nobara" alt="Nobara Kugisaki">
-            <img src="https://via.placeholder.com/140x200/0b0b0b/ffffff?text=Gojo" alt="Satoru Gojo">
-          </div>
-          <p class="char-caption">Featured: Yuji, Megumi, Nobara, Gojo</p>
-        </aside>
-      </div>
-      <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="#070708" d="M0,0 L1440,0 L1440,80 L0,40 Z"></path></svg>
-    </section>
+        <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="#070708" d="M0,0 L1440,0 L1440,80 L0,40 Z"></path></svg>
+      </section>
+    </div>
 
     <section class="features container">
       <div class="feature">
@@ -65,12 +69,11 @@
         <h3>Gallery</h3>
         <p>Fan art gallery — click thumbnails to enlarge.</p>
         <a href="gallery.html" class="link">Open gallery →</a>
-      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 JJK Fan Site — Student Project (fan-made)</p>
+    <p>© 2025 CS101 JJK Fan site — Student Project (fan-made)</p>
   </footer>
 </body>
 </html>

@@ -15,11 +15,11 @@ function setRandomBackgroundVideo() {
   const videos = [
     'assets/videos/gojo-hand-sign.3840x2160.mp4',
     'assets/videos/yuji-doimain.1920x1080.mp4',
-    'assets/videos/yuta-from-jujutsu-kaisen.1920x1080.mp4'
-    'assets/videos/choso-black-and-white.1920x1080.mp4'
-    'assets/videos/choso-in-battle-stance.1920x1080.mp4'
-    'assets/videos/divine-general-mahoraga.3840x2160.mp4'
-    'assets/videos/gojo-purple-hollow-technique.1920x1080.mp4'
+    'assets/videos/yuta-from-jujutsu-kaisen.1920x1080.mp4',
+    'assets/videos/choso-black-and-white.1920x1080.mp4',
+    'assets/videos/choso-in-battle-stance.1920x1080.mp4',
+    'assets/videos/divine-general-mahoraga.3840x2160.mp4',
+    'assets/videos/gojo-purple-hollow-technique.1920x1080.mp4',
     'assets/videos/yuta-okkotsu-jjk.1920x1080.mp4'
   ];
 
@@ -174,6 +174,7 @@ function setupContactForm(){
     setTimeout(() => { ty.style.display = 'none'; ty.setAttribute('aria-hidden','true'); }, 3500);
   });
 }
+
 
 
 

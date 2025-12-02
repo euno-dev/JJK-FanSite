@@ -9,6 +9,27 @@ document.addEventListener('DOMContentLoaded', function () {
   revealHome();
 });
 
+// random bg
+function setRandomBackgroundVideo() {
+  // List of your video files
+  const videos = [
+    'assets/videos/gojo-hand-sign.3840x2160.mp4',
+    'assets/videos/yuji-doimain.1920x1080.mp4',
+    'assets/videos/yuta-from-jujutsu-kaisen.1920x1080.mp4'
+  ];
+
+  // Pick a random video
+  const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+
+  // Set it as the video source
+  const videoSource = document.getElementById('bg-source');
+  videoSource.src = randomVideo;
+
+  // Reload the video element to apply the new source
+  const video = document.getElementById('bg-video');
+  video.load();
+}
+
 function setGreeting(){
   const el = document.getElementById('greeting');
   if(!el) return;
@@ -138,3 +159,4 @@ function setupContactForm(){
     setTimeout(() => { ty.style.display = 'none'; ty.setAttribute('aria-hidden','true'); }, 3500);
   });
 }
+

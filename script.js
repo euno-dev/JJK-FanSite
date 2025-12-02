@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setupContactForm();
   setupCharacterSlideshows();
   revealHome();
+  setRandomBackgroundVideo();
 });
 
 // random bg
@@ -159,4 +160,5 @@ function setupContactForm(){
     setTimeout(() => { ty.style.display = 'none'; ty.setAttribute('aria-hidden','true'); }, 3500);
   });
 }
+
 

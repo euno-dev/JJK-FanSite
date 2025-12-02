@@ -12,25 +12,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // random bg
 function setRandomBackgroundVideo() {
-  // List of your video files
   const videos = [
     'assets/videos/gojo-hand-sign.3840x2160.mp4',
     'assets/videos/yuji-doimain.1920x1080.mp4',
     'assets/videos/yuta-from-jujutsu-kaisen.1920x1080.mp4'
   ];
 
-  // Pick a random video
-  const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+  // Get the last video from localStorage
+  const lastVideo = localStorage.getItem('lastVideo');
 
-  // Set it as the video source
+  let randomVideo;
+
+  do {
+    // Pick a random video
+    randomVideo = videos[Math.floor(Math.random() * videos.length)];
+  } while (videos.length > 1 && randomVideo === lastVideo); 
+  // Avoid repeating if more than 1 video exists
+
+  // Set the video source
   const videoSource = document.getElementById('bg-source');
   videoSource.src = randomVideo;
 
   // Reload the video element to apply the new source
   const video = document.getElementById('bg-video');
   video.load();
-}
 
+  // Save the current video to localStorage for next refresh
+  localStorage.setItem('lastVideo', randomVideo);
+}
 function setGreeting(){
   const el = document.getElementById('greeting');
   if(!el) return;
@@ -160,5 +169,6 @@ function setupContactForm(){
     setTimeout(() => { ty.style.display = 'none'; ty.setAttribute('aria-hidden','true'); }, 3500);
   });
 }
+
 
 

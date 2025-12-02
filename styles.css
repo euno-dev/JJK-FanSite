@@ -51,7 +51,8 @@ body.loaded .hero-content{opacity:1;transform:none}
 /* Image title replacement */
 .hero-title-img{max-width:760px;width:100%;height:auto;display:block;margin:0 auto 20px;opacity:0;animation:fadeInDown 0.8s ease-out 0.2s forwards}
 .hero-sub{color:var(--muted);margin:0 auto 30px;max-width:680px;font-size:1.2rem;line-height:1.6;text-align:center;opacity:0;animation:fadeIn 0.8s ease-out 0.3s forwards}
-.hero-ctas{display:flex;gap:12px;margin-bottom:10px;justify-content:center;margin-top:30px;opacity:0;animation:fadeIn 0.8s ease-out 0.75s forwards}
+.hero-ctas {display: flex;flex-wrap: wrap;gap: 12px 18px;justify-content: center;margin-bottom: 10px;margin-top: 30px;opacity: 0;animation: fadeIn 0.8s ease-out 0.75s forwards;}
+
 /* Glow effects for CTA buttons */
 .hero-ctas .btn:nth-child(1){background:rgba(0,100,255,0.8) !important;box-shadow:0 0 20px rgba(0,100,255,0.6), 0 0 40px rgba(0,150,255,0.4) !important}
 .hero-ctas .btn:nth-child(1):hover{box-shadow:0 0 30px rgba(0,100,255,0.9), 0 0 60px rgba(0,150,255,0.7) !important}
@@ -96,6 +97,19 @@ body.loaded .hero-content{opacity:1;transform:none}
 }
 .btn:hover::after, .btn:focus::after, .btn:focus-visible::after{
   opacity:0.92;transform:scale(1);animation:spin 4.2s linear infinite;
+}
+
+/* Purple button */
+.btn-purple {
+  background: linear-gradient(90deg, #8a2be2, #b266ff); /* deep purple → lighter purple */
+  color: #fff;
+  box-shadow: 0 8px 26px rgba(138, 43, 226, 0.3), 0 0 40px rgba(178, 102, 255, 0.2);
+  border: 1px solid rgba(255,255,255,0.04);
+  font-weight: 600;
+}
+
+.btn-purple:hover {
+  box-shadow: 0 0 30px rgba(138, 43, 226, 0.5), 0 0 60px rgba(178, 102, 255, 0.35);
 }
 
 /* Strong, visible glow for any focused or hovered button */
@@ -268,4 +282,5 @@ footer{background-color:#050505;padding:18px;text-align:center;color:var(--muted
   .char-row{justify-content:flex-start;overflow:auto}
   .slides{width:100%}
   .slide{min-width:100%}
+
 }

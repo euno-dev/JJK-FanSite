@@ -1,10 +1,10 @@
 :root { }
 
 body {
-  background-image: url('https://i.imgur.com/Ye3KAQ3.gif'), linear-gradient(180deg, var(--bg, #050505), #060606);
+  background-image: url('https://imgur.com/a/MpDvjMw'), linear-gradient(180deg, var(--bg, #050505), #060606);
   background-repeat: no-repeat, no-repeat;
   background-position: center center, center center;
-  background-size: 100% 100%, 100% 100%;
+  background-size: 300% 300%, 300% 300%;
   background-attachment: fixed, fixed;
   background-blend-mode: overlay;
   color: var(--text-color, #eaeef2);
@@ -66,4 +66,5 @@ body::after{
 @media (prefers-reduced-motion: reduce){
   body::after{opacity:0.9;filter:none}
 }
+
 

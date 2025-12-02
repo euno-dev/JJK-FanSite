@@ -43,24 +43,6 @@ body {
 .hero-wave{display:none !important}
 .hero-wave path{fill:transparent !important}
 
-
-body::after{
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(44% 34% at 50% 18%, rgba(0,0,0,0.62), transparent 36%),
-    radial-gradient(66% 44% at 50% 86%, rgba(0,0,0,0.72), transparent 46%),
-    radial-gradient(26% 22% at 10% 60%, rgba(0,0,0,0.34), transparent 34%),
-    radial-gradient(26% 22% at 90% 60%, rgba(0,0,0,0.34), transparent 34%);
-  mix-blend-mode: multiply;
-  opacity: 1;
-  filter: blur(6px) saturate(0.9);
-  transition: opacity 300ms ease;
-}
-
 @media (prefers-reduced-motion: reduce){
   body::after{opacity:0.9;filter:none}
 }
@@ -70,7 +52,8 @@ body::after{
   #bg-video { display: none; }
   body { background: #000; }
 }
-}
+
+
 
 
 

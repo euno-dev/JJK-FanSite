@@ -236,9 +236,19 @@ body.loaded .hero-content{opacity:1;transform:none}
 
 /* Carousel */
 .carousel{display:flex;align-items:center;justify-content:center;gap:12px;margin:20px 0}
-.slides{width:640px;display:flex;overflow:hidden}
-.slide{min-width:640px;padding:12px;background:transparent;border-radius:8px;text-align:center}
+.carousel-btn{background:transparent;border:none;cursor:pointer;padding:8px;border-radius:8px;transition:transform 0.2s ease, opacity 0.2s ease;opacity:0.8}
+.carousel-btn:hover{opacity:1;transform:scale(1.1)}
+.carousel-btn:active{transform:scale(0.95)}
+.carousel-btn img{width:40px;height:40px;display:block}
+.slides{width:640px;height:auto;display:flex;justify-content:center;align-items:center}
+.slide{width:640px;padding:12px;background:transparent;border-radius:8px;text-align:center;display:none;opacity:0;animation:carouselFade 0.6s ease-in-out forwards}
+.slide.active{display:block;animation:carouselFade 0.6s ease-in-out forwards}
 .slide img{width:280px;height:280px;object-fit:cover;border-radius:8px}
+
+@keyframes carouselFade{
+  0%{opacity:0;transform:scale(0.95)}
+  100%{opacity:1;transform:scale(1)}
+}
 
 /* Episodes */
 .episode-list{padding-left:18px}

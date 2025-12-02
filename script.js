@@ -66,6 +66,7 @@ function setupCharacterSlideshows(){
     const next = ss.querySelector('.char-next');
     if(!slidesWrap || slides.length === 0) return;
     let current = 0;
+    let autoPlayTimer = null;
     const total = slides.length;
     const intervalMs = parseInt(ss.dataset.interval, 10) || 4000;
 
@@ -75,13 +76,25 @@ function setupCharacterSlideshows(){
       slidesWrap.style.transform = `translateX(${-current * slideWidth}px)`;
     }
 
-    if(prev) prev.addEventListener('click', () => { show(current - 1); });
-    if(next) next.addEventListener('click', () => { show(current + 1); });
+    function startAutoPlay() {
+      autoPlayTimer = setInterval(() => { show(current + 1); }, intervalMs);
+    }
+
+    if(prev) prev.addEventListener('click', () => { 
+      clearInterval(autoPlayTimer);
+      show(current - 1); 
+      startAutoPlay();
+    });
+    if(next) next.addEventListener('click', () => { 
+      clearInterval(autoPlayTimer);
+      show(current + 1); 
+      startAutoPlay();
+    });
 
     // auto-advance with pause on hover
-    let t = setInterval(() => { show(current + 1); }, intervalMs);
-    ss.addEventListener('mouseenter', () => { clearInterval(t); });
-    ss.addEventListener('mouseleave', () => { t = setInterval(() => { show(current + 1); }, intervalMs); });
+    startAutoPlay();
+    ss.addEventListener('mouseenter', () => { clearInterval(autoPlayTimer); });
+    ss.addEventListener('mouseleave', () => { startAutoPlay(); });
 
     // responsive: recalc transform on resize
     window.addEventListener('resize', () => show(current));
@@ -98,21 +111,59 @@ function revealHome(){
 
 // Carousel for characters
 function setupCarousel(){
-  const slides = document.getElementById('charSlides');
-  if(!slides) return;
-  const slideCount = slides.children.length;
-  let index = 0;
-  function show(i){
-    const slideEl = slides.children[0];
-    const w = (slideEl && slideEl.clientWidth) ? slideEl.clientWidth : slides.clientWidth;
-    slides.style.transform = `translateX(${-i * w}px)`;
+  const slidesContainer = document.getElementById('charSlides');
+  if(!slidesContainer) return;
+  
+  const slides = Array.from(slidesContainer.querySelectorAll('.slide'));
+  const slideCount = slides.length;
+  let currentIndex = 0;
+  let autoPlayTimer = null;
+  
+  // Set first slide as active
+  slides[0].classList.add('active');
+  
+  function showSlide(index) {
+    currentIndex = (index + slideCount) % slideCount;
+    slides.forEach((slide, idx) => {
+      if(idx === currentIndex) {
+        // Remove and re-add active class to trigger animation
+        slide.classList.remove('active');
+        // Force reflow to restart animation
+        void slide.offsetWidth;
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
   }
+  
+  function startAutoPlay() {
+    autoPlayTimer = setInterval(() => {
+      showSlide(currentIndex + 1);
+    }, 5000);
+  }
+  
   const prevBtn = document.getElementById('prevChar');
   const nextBtn = document.getElementById('nextChar');
-  if(prevBtn) prevBtn.addEventListener('click', function(){ index = (index - 1 + slideCount) % slideCount; show(index); });
-  if(nextBtn) nextBtn.addEventListener('click', function(){ index = (index + 1) % slideCount; show(index); });
-  // auto-advance every 5s
-  setInterval(function(){ index = (index + 1) % slideCount; show(index); }, 5000);
+  
+  if(prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      clearInterval(autoPlayTimer);
+      showSlide(currentIndex - 1);
+      startAutoPlay();
+    });
+  }
+  
+  if(nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      clearInterval(autoPlayTimer);
+      showSlide(currentIndex + 1);
+      startAutoPlay();
+    });
+  }
+  
+  // Start auto-play
+  startAutoPlay();
 }
 
 // Toggle synopsis
@@ -174,8 +225,6 @@ function setupContactForm(){
     setTimeout(() => { ty.style.display = 'none'; ty.setAttribute('aria-hidden','true'); }, 3500);
   });
 }
-
-
 
 
 

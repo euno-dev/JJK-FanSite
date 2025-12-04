@@ -52,6 +52,7 @@ body.loaded .hero-content{opacity:1;transform:none}
 .hero-title-img{max-width:760px;width:100%;height:auto;display:block;margin:0 auto 20px;opacity:0;animation:fadeInDown 0.8s ease-out 0.2s forwards}
 .hero-sub {
   color: #fff; /* text color */
+  animation: fadeIn 0.8s ease-out 0.8s forwards;
   font-size: 1.2rem;
   line-height: 1.6;
   text-align: center;
@@ -75,7 +76,16 @@ body.loaded .hero-content{opacity:1;transform:none}
 .btn{display:inline-block;color:white;padding:11px 18px;border-radius:12px;text-decoration:none;border:1px solid var(--soft);font-weight:600}
 .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 8px 26px rgba(100,30,30,0.12)}
 .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
-.greeting.small{margin-top:8px;font-style:italic;color:var(--muted);opacity:0;animation:fadeIn 0.8s ease-out 0.35s forwards}
+.greeting.small{ color: #c28aff; /* soft purple */
+  font-style: italic;
+  margin-top: 8px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.35s forwards;
+  text-align: center;
+  text-shadow:
+    0 0 2px #c28aff,
+    0 0 6px #a24fff,
+    0 0 10px #7a00ff; /* subtle purple glow */}
 
 .hero-right{width:360px;text-align:center;margin:0 auto}
 .char-row{display:flex;gap:12px;justify-content:center;flex-wrap:nowrap}
@@ -85,7 +95,18 @@ body.loaded .hero-content{opacity:1;transform:none}
 .char-row img:nth-child(3){animation-delay:0.6s}
 .char-row img:nth-child(4){animation-delay:0.7s}
 .char-row img:hover{transform:translateY(-10px) scale(1.06);box-shadow:0 16px 40px rgba(0,0,0,0.6)}
-.char-caption{color:var(--muted);font-size:0.8rem;margin-top:16px;font-style:italic;opacity:0;animation:fadeIn 0.8s ease-out 0.8s forwards}
+.char-caption{color: #66ccff; /* soft blue text */
+  font-size: 0.8rem;
+  margin-top: 16px;
+  font-style: italic;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.8s forwards;
+  text-align: center;
+  text-shadow:
+    0 0 2px #66ccff,
+    0 0 6px #3399ff,
+    0 0 10px #0066ff; /* subtle glow effect */
+}
 .hero-wave{display:block;width:100%;height:80px;margin-top:28px;margin-bottom:20px}
 
 /* Cursed energy coating effect for interactive buttons */
@@ -308,6 +329,7 @@ footer{background-color:#050505;padding:18px;text-align:center;color:var(--muted
   .slide{min-width:100%}
 
 }
+
 
 
 

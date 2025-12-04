@@ -36,56 +36,11 @@ body.loaded{opacity:1;transform:none}
   background-color: var(--bg);
 }
 
-  .site-header {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-    background-color: var(--bg);
-    width: 100vw;  /* force full viewport width */
-    min-width: 100%;
-  }
-
-  .site-header nav a {
-    font-size: 14px;
-    margin-left:14px;
-    color:var(--muted);
-    text-decoration:none;
-    padding:8px 10px;
-    border-radius:8px;
-    transition:color .18s ease, background .18s ease
-  }
-.site-header nav {
-  display: flex;
-  flex-wrap: nowrap;   /* don't wrap links to new line */
-  overflow-x: auto;    /* enable horizontal scrolling */
-  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-    align-items:center;
-    margin-left:14px;
-    color:var(--muted);
-    text-decoration:none;
-    padding:8px 10px;
-    border-radius:8px;
-}
-
-.site-header nav::-webkit-scrollbar {
-  display: none; /* hide scrollbar */
-}
-
-
-.site-header h1{
-    margin:0;
-    font-size:1.05rem;
-    color:#fff;
-    font-weight:700
-
-.site-header nav a:hover{
-    color:var(--accent-2);
-    background:var(--glass)
-}
-.site-header nav a.active{
-    color:var(--accent);
-     background:linear-gradient(90deg, rgba(255,59,59,0.08), rgba(100,181,246,0.03))
-}]
+.site-header h1{margin:0;font-size:1.05rem;color:#fff;font-weight:700}
+.site-header nav{display:flex;align-items:center}
+.site-header nav a{margin-left:14px;color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;transition:color .18s ease, background .18s ease}
+.site-header nav a:hover{color:var(--accent-2);background:var(--glass)}
+.site-header nav a.active{color:var(--accent);background:linear-gradient(90deg, rgba(255,59,59,0.08), rgba(100,181,246,0.03))}]
 
 /* MOBILE HEADER FIX */
 @media (max-width: 600px) {
@@ -410,6 +365,29 @@ body {
   }
 
   /* ---- Header ---- */
+  .site-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    background-color: var(--bg);
+    width: 100vw;  /* force full viewport width */
+    min-width: 100%;
+  }
+
+  .site-header nav a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+.site-header nav {
+  display: flex;
+  flex-wrap: nowrap;   /* don't wrap links to new line */
+  overflow-x: auto;    /* enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+.site-header nav::-webkit-scrollbar {
+  display: none; /* hide scrollbar */
+}
 
 
   /* ---- Hero Section ---- */
@@ -494,6 +472,12 @@ body {
   }
 
 }
+
+
+
+
+
+
 
 
 

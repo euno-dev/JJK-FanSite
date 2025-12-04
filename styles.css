@@ -359,19 +359,26 @@ body {
     flex-direction: column;
     gap: 10px;
     text-align: center;
-  }
-
-  .site-header nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    background-color: var(--bg);
+    width: 100vw;  /* force full viewport width */
+    min-width: 100%;
   }
 
   .site-header nav a {
     font-size: 14px;
     padding: 6px 10px;
   }
+.site-header nav {
+  display: flex;
+  flex-wrap: nowrap;   /* don't wrap links to new line */
+  overflow-x: auto;    /* enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+.site-header nav::-webkit-scrollbar {
+  display: none; /* hide scrollbar */
+}
+
 
   /* ---- Hero Section ---- */
   .hero {
@@ -455,6 +462,7 @@ body {
   }
 
 }
+
 
 
 

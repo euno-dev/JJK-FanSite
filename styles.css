@@ -52,7 +52,7 @@ body.loaded .hero-content{opacity:1;transform:none}
 .hero-title-img{max-width:760px;width:100%;height:auto;display:block;margin:0 auto 20px;opacity:0;animation:fadeInDown 0.8s ease-out 0.2s forwards}
 .hero-sub {
   color: #fff; /* text color */
-  animation: fadeIn 0.8s ease-out 0.8s forwards;
+  animation: fadeInDown 0.8s ease-out 0.2s forwards;
   font-size: 1.2rem;
   line-height: 1.6;
   text-align: center;
@@ -329,6 +329,7 @@ footer{background-color:#050505;padding:18px;text-align:center;color:var(--muted
   .slide{min-width:100%}
 
 }
+
 
 
 

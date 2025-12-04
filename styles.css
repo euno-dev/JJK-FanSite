@@ -343,74 +343,119 @@ body {
 
 }
 
-/* ================================
-   MOBILE RESPONSIVE FIXES
-   ================================ */
-
+/* =========================================
+   MOBILE RESPONSIVE DESIGN 
+   All screens 0–768px width
+========================================= */
 @media (max-width: 768px) {
 
-  /* Header */
+  /* ---- Layout Fix ---- */
+  .container {
+    padding: 0 20px;
+  }
+
+  /* ---- Header ---- */
   .site-header {
-    padding: 10px 14px;
-  }
-  .site-header h1 {
-    font-size: 0.9rem;
-  }
-  .site-header nav a {
-    margin-left: 8px;
-    padding: 6px 8px;
-  }
-
-  /* Hero title */
-  .hero-title {
-    font-size: 2.4rem;
-  }
-  .hero-sub {
-    font-size: 1rem;
-  }
-
-  /* Character row */
-  .char-row img {
-    width: 80px;
-    height: 120px;
-  }
-
-  /* Features → switch to 1-column */
-  .features {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    margin: 60px auto;
-  }
-  .features .feature:nth-child(2) {
-    margin-top: 0;
-  }
-
-  /* Cards in gallery */
-  .card-grid {
     flex-direction: column;
-  }
-  .card {
-    min-width: 100%;
-  }
-
-  /* Episode images */
-  .episode-list img {
-    width: 100%;
+    gap: 10px;
+    text-align: center;
   }
 
-  /* Carousel */
-  .slides {
+  .site-header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .site-header nav a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  /* ---- Hero Section ---- */
+  .hero {
+    padding: 40px 0;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left {
     width: 100%;
   }
-  .slide {
+
+  /* Title image scaling */
+  .hero-title-img {
+    width: 80%;
+    max-width: 280px;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+  }
+
+  #greeting {
+    font-size: 14px;
+  }
+
+  /* ---- Character images ---- */
+  .hero-right {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .char-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .char-row img {
+    width: 32%;
+    max-width: 110px;
+    border-radius: 10px;
+  }
+
+  .char-caption {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  /* ---- CTA Buttons ---- */
+  .hero-ctas {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 12px 18px;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ---- Background Video ---- */
+  #bg-video {
+    object-fit: cover;
+    height: 100vh;
     width: 100%;
   }
-  .slide img {
-    width: 70%;
-    height: auto;
+
+  /* ---- Footer ---- */
+  footer p {
+    font-size: 12px;
+    text-align: center;
+    padding: 10px 0;
   }
 
 }
+
 
 
 

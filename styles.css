@@ -373,73 +373,6 @@ body {
     padding: 6px 10px;
   }
 
-  /* ---- Hero Section ---- */
-  .hero {
-    padding: 40px 0;
-  }
-
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-left {
-    width: 100%;
-  }
-
-  /* Title image scaling */
-  .hero-title-img {
-    width: 80%;
-    max-width: 280px;
-  }
-
-  .hero-sub {
-    font-size: 14px;
-  }
-
-  #greeting {
-    font-size: 14px;
-  }
-
-  /* ---- Character images ---- */
-  .hero-right {
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .char-row {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .char-row img {
-    width: 32%;
-    max-width: 110px;
-    border-radius: 10px;
-  }
-
-  .char-caption {
-    font-size: 13px;
-    margin-top: 10px;
-  }
-
-  /* ---- CTA Buttons ---- */
-  .hero-ctas {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .btn {
-    padding: 12px 18px;
-    font-size: 14px;
-    width: 100%;
-    text-align: center;
-  }
-
   /* ---- Background Video ---- */
   #bg-video {
     object-fit: cover;
@@ -455,6 +388,7 @@ body {
   }
 
 }
+
 
 
 

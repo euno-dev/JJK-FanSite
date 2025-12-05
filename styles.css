@@ -286,11 +286,117 @@ body.loaded .hero-content{opacity:1;transform:none}
 }
 
 /* Episodes */
-.episode-list{padding-left:18px}
-.episode-list li{margin-bottom:12px}
-.episode-list strong{color:#fff}
-.episode-list img{width: 720px;;height:auto;border-radius:8px}
-.episode-list .synopsis{display:none;margin-top:8px;color:var(--muted)}
+.episode-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.episode-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 15px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease;
+}
+
+.episode-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.episode-item img {
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.episode-content {
+  flex: 1;
+}
+
+.episode-content p {
+  margin: 0 0 12px 0;
+}
+
+.episode-content strong {
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.episode-list .synopsis {
+  display: none;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Season Tabs */
+.season-tabs {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px 0 40px 0;
+  flex-wrap: wrap;
+}
+
+.season-poster {
+  width: 140px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  filter: brightness(0.8);
+}
+
+.season-poster:hover {
+  opacity: 1;
+  filter: brightness(1);
+  transform: scale(1.05);
+}
+
+.season-poster.active {
+  border-color: #ff6b6b;
+  opacity: 1;
+  filter: brightness(1.1);
+}
+
+.season-content {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Toggle button with custom image */
+.toggle{
+  background: url('assets/toggle-button.png') center / contain no-repeat;
+  border: none;
+  color: transparent;
+  padding: 0;
+  width: 120px;
+  height: 40px;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 0;
+  font-weight: 500;
+  display: inline-block;
+  transition: opacity 0.3s ease;
+  margin-top: 8px;
+}
+
+.toggle:hover {
+  opacity: 0.85;
+}
+
+.toggle:active {
+  transform: scale(0.98);
+}
 
 /* Gallery */
 .gallery-grid img{width:100%;cursor:pointer;border-radius:8px;border:1px solid var(--soft)}

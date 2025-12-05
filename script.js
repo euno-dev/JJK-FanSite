@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setGreeting();
   setupCarousel();
   setupSynopsisToggles();
+  setupSeasonTabs();
   setupLightbox();
   setupContactForm();
   setupCharacterSlideshows();
@@ -176,6 +177,38 @@ function setupSynopsisToggles(){
       p.style.display = p.style.display === 'block' ? 'none' : 'block';
     });
   });
+}
+
+// Setup season tabs
+function setupSeasonTabs(){
+  const posters = document.querySelectorAll('.season-poster');
+  const contents = document.querySelectorAll('.season-content');
+  
+  posters.forEach((poster, index) => {
+    poster.addEventListener('click', () => {
+      // Remove active class from all posters
+      posters.forEach(p => p.classList.remove('active'));
+      
+      // Hide all content
+      contents.forEach(c => c.style.display = 'none');
+      
+      // Add active class to clicked poster
+      poster.classList.add('active');
+      
+      // Show corresponding content
+      const seasonName = poster.getAttribute('data-season');
+      const contentId = seasonName + '-content';
+      const contentDiv = document.getElementById(contentId);
+      if(contentDiv) {
+        contentDiv.style.display = 'block';
+      }
+    });
+  });
+  
+  // Trigger click on first poster to set initial state
+  if(posters.length > 0) {
+    posters[0].click();
+  }
 }
 
 // Lightbox for gallery

@@ -7,11 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="Styles/custom-background.css">
-  <script defer src="js/script.js"></script>
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header class="site-header">
-    <h1>Episodes & Story</h1>
+    <h1>Movie & Seasons</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="characters.html">Characters</a>
@@ -25,27 +25,276 @@
   <div class="bgjujutsu">
   <main class="container-2">
     <section>
-      <h2>Episode List</h2>
-      <ol class="episode-list">
-        <li>
-          <img src="https://m.media-amazon.com/images/M/MV5BNWY5M2YyM2EtMjk3NS00NzA3LWEzNTMtOWZmNTI2YmRhYTYxXkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
-          <p><strong>Episode 1 — Ryomen Sukuna</strong></p>
-          <button class="toggle" data-target="syn1">Show/Hide Synopsis</button>
-          <p id="syn1" class="synopsis">Yuji Itadori encounters cursed objects and becomes host to Sukuna.</p>
-        </li>
-        <li>
-          <img src="https://m.media-amazon.com/images/M/MV5BYmVlMWViMzItYWQwYS00ODU4LThjYmItYjVlYjQyMDI1YzFhXkEyXkFqcGc@._V1_.jpg" alt="Episode 2">
-          <p><strong>Episode 2 — For Myself</strong></p>
-          <button class="toggle" data-target="syn2">Show/Hide Synopsis</button>
-          <p id="syn2" class="synopsis">Yuji begins training with Megumi and Nobara under Gojo's guidance.</p>
-        </li>
-        <li>
-          <img src="https://m.media-amazon.com/images/M/MV5BMjQ3ZmI5NGUtMjU3MC00ODQzLTg0ZDgtYzBhY2YzMWFlNDhhXkEyXkFqcGc@._V1_.jpg" alt="Episode 3">
-          <p><strong>Episode 3 - Girl of Steel</strong></p>
-          <button class="toggle" data-target="syn3">Show/Hide Synopsis</button>
-          <p id="syn3" class="synopsis">Team missions reveal the dangerous world of curses and exorcisms.</p>
-        </li>
-      </ol>
+      <h2>Movie & Seasons</h2>
+      
+      <!--Movie/Season Tabs-->
+      <div class="season-tabs">
+        <img src="assets/movie.jpg" alt="Jujutsu Kaisen 0 Movie" class="season-poster" data-season="movie">
+        <img src="assets/season1.png" alt="Season 1" class="season-poster" data-season="season1">
+        <img src="assets/season2.png" alt="Season 2" class="season-poster" data-season="season2">
+      </div>
+
+      <!--Movie-->
+      <div id="movie-content" class="season-content" style="display:none;">
+        <h3>Jujutsu Kaisen 0: The Movie</h3>
+        <div class="episode-list">
+          <div class="episode-item">
+            <img src="https://i.ytimg.com/vi/z5IX2DQJwKU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC4tzsJe6Y22g4yHch5lgZLROfDZQ" alt="Movie">
+            <div class="episode-content">
+              <p><strong>Jujutsu Kaisen 0 — The Movie</strong></p>
+              <button class="toggle" data-target="movie-syn">Show/Hide Synopsis</button>
+              <p id="movie-syn" class="synopsis">This movie takes place before the main series and focuses on Yuta Okkotsu, a high schooler haunted by the curse of his childhood friend Rika. Gojo brings him to Tokyo Jujutsu High where he learns to control his powers and joins the battle against powerful curses.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Season 1 Episodes-->
+      <div id="season1-content" class="season-content" style="display:block;">
+        <h3>Season 1 - Episodes</h3>
+        <div class="episode-list">
+          <div class="episode-item">
+            <img src="https://m.media-amazon.com/images/M/MV5BNWY5M2YyM2EtMjk3NS00NzA3LWEzNTMtOWZmNTI2YmRhYTYxXkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+            <div class="episode-content">
+              <p><strong>Episode 1 — Ryomen Sukuna</strong></p>
+              <button class="toggle" data-target="syn1">Show/Hide Synopsis</button>
+              <p id="syn1" class="synopsis">Yuji Itadori encounters cursed objects and becomes host to Sukuna.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://m.media-amazon.com/images/M/MV5BYmVlMWViMzItYWQwYS00ODU4LThjYmItYjVlYjQyMDI1YzFhXkEyXkFqcGc@._V1_.jpg" alt="Episode 2">
+            <div class="episode-content">
+              <p><strong>Episode 2 — For Myself</strong></p>
+              <button class="toggle" data-target="syn2">Show/Hide Synopsis</button>
+              <p id="syn2" class="synopsis">Yuji begins training with Megumi and Nobara under Gojo's guidance.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://m.media-amazon.com/images/M/MV5BMjQ3ZmI5NGUtMjU3MC00ODQzLTg0ZDgtYzBhY2YzMWFlNDhhXkEyXkFqcGc@._V1_.jpg" alt="Episode 3">
+            <div class="episode-content">
+              <p><strong>Episode 3 - Girl of Steel</strong></p>
+              <button class="toggle" data-target="syn3">Show/Hide Synopsis</button>
+              <p id="syn3" class="synopsis">Team missions reveal the dangerous world of curses and exorcisms.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/d/de/Special_Grade_Curse_suprises_Yuji_and_Megumi_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20201025015541" alt="Episode 4">
+            <div class="episode-content">
+              <p><strong>Episode 4 - Fearsome Womb</strong></p>
+              <button class="toggle" data-target="syn4">Show/Hide Synopsis</button>
+              <p id="syn4" class="synopsis">Yuji, Megumi, and Nobara are sent to investigate a juvenile detention center that has become a site for a potentially special-grade cursed spirit.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/0/0a/Sukuna_glares_at_Megumi_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20201101025407" alt="Episode 5">
+            <div class="episode-content">
+              <p><strong>Episode 5 - Fearsome Womb, Part 2</strong></p>
+              <button class="toggle" data-target="syn5">Show/Hide Synopsis</button>
+              <p id="syn5" class="synopsis">Sukuna takes full control of Yuji's body, rips out his heart, and confronts a fleeing Megumi. </p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/c/ce/Jogo_claims_he_will_kill_Satoru_Gojo_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20201108042302" alt="Episode 6">
+            <div class="episode-content">
+              <p><strong>Episode 6 - After the Rain</strong></p>
+              <button class="toggle" data-target="syn6">Show/Hide Synopsis</button>
+              <p id="syn6" class="synopsis">Yuji Itadori makes a pact with Sukuna to be resurrected after his death, while Megumi Fushiguro and Nobara Kugisaki train for the upcoming Goodwill Event.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/8/89/Gojo_shows_Jogo_the_difference_in_strength_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20201114063800" alt="Episode 7">
+            <div class="episode-content">
+              <p><strong>Episode 7 - Assault </strong></p>
+              <button class="toggle" data-target="syn7">Show/Hide Synopsis</button>
+              <p id="syn7" class="synopsis">The powerful special grade cursed spirit Jogo ambushes Satoru Gojo, but Gojo effortlessly demonstrates his immense power by using Domain Expansion and his innate technique, "Infinity"</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/5/56/Rivals_from_Kyoto_%28Anime%29.png/revision/latest?cb=20201124031254" alt="Episode 8">
+            <div class="episode-content">
+              <p><strong>Episode 8 - Boring</strong></p>
+              <button class="toggle" data-target="syn8">Show/Hide Synopsis</button>
+              <p id="syn8" class="synopsis">Focuses on the first-year students' interactions with students from Kyoto Jujutsu High, specifically Aoi Todo and Mai Zen'in, during a lull in the training event.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/5/51/Mahito_reading_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20201130043423" alt="Episode 9">
+            <div class="episode-content">
+              <p><strong>Episode 9 - Young Fish and Reverse Punishment</strong></p>
+              <button class="toggle" data-target="syn9">Show/Hide Synopsis</button>
+              <p id="syn9" class="synopsis">Primarily introduces the character of Junpei Yoshino and his tragic encounter with the curse Mahito, while Yuji Itadori begins a new investigation with a first-grade sorcerer.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/8/84/Mahito_explaining_the_soul_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20201209225244" alt="Episode 10">
+            <div class="episode-content">
+              <p><strong>Episode 10 - Idle Transfiguration</strong></p>
+              <button class="toggle" data-target="syn10">Show/Hide Synopsis</button>
+              <p id="syn10" class="synopsis">Focuses on the parallel investigations of Yuji Itadori and Kento Nanami, which lead them both to the special-grade curse, Mahito.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/7/7f/Junpei_and_his_shikigami_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20201212214009" alt="Episode 11">
+            <div class="episode-content">
+              <p><strong>Episode 11 - Narrow-Minded</strong></p>
+              <button class="toggle" data-target="syn11">Show/Hide Synopsis</button>
+              <p id="syn11" class="synopsis">Concludes the fight between Kento Nanami and Mahito while focusing on the tragic manipulation of Junpei Yoshino by Mahito, which ultimately pushes Junpei onto a dark path.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/3/39/Yuji%27s_fantasy_of_Junpei_as_a_jujutsu_student_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20201226023046" alt="Episode 12">
+            <div class="episode-content">
+              <p><strong>Episode 12 - To You Someday</strong></p>
+              <button class="toggle" data-target="syn12">Show/Hide Synopsis</button>
+              <p id="syn12" class="synopsis">A heartbreaking episode that details the tragic end of Junpei Yoshino and the beginning of Yuji Itadori's direct and enraged confrontation with the special-grade curse Mahito.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/b/b4/Mahito_ready_to_fight_Yuji_and_Nanami_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20201226040607" alt="Episode 13">
+            <div class="episode-content">
+              <p><strong>Episode 13 - Tomorrow</strong></p>
+              <button class="toggle" data-target="syn13">Show/Hide Synopsis</button>
+              <p id="syn13" class="synopsis">Concludes the intense battle against the special-grade curse Mahito, ending the "Small Fry and Reverse Retribution Arc" with a mix of action, tragedy, and reflection. concludes the intense battle against the special-grade curse Mahito, ending the "Small Fry and Reverse Retribution Arc" with a mix of action, tragedy, and reflection. </p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/0/0c/Noritoshi_tells_his_team_to_attack_Yuji_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20210116045359" alt="Episode 14">
+            <div class="episode-content">
+              <p><strong>Episode 14 - Kyoto Sister School Goodwill Event - Team Battle, Part 0 </strong></p>
+              <button class="toggle" data-target="syn14">Show/Hide Synopsis</button>
+              <p id="syn14" class="synopsis">Marks the beginning of a new arc, transitioning from the dark tone of the previous episodes to the introduction of new characters and a planned competition.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/3/3f/Megumi_confronts_Noritoshi_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20210124224052" alt="Episode 15">
+            <div class="episode-content">
+              <p><strong>Episode 15 - Kyoto Sister School Goodwill Event - Team Battle, Part 1 </strong></p>
+              <button class="toggle" data-target="syn15">Show/Hide Synopsis</button>
+              <p id="syn15" class="synopsis">Kicks off the first day of the goodwill event with an immediate, all-out ambush on Yuji Itadori, leading to a surprising, action-packed confrontation with Aoi Todo.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/4/40/Gorilla_Mode_ready_to_finish_Mechamaru_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20210130041318" alt="Episode 16">
+            <div class="episode-content">
+              <p><strong>Episode 16 - Kyoto Sister School Goodwill Event - Team Battle, Part 2 </strong></p>
+              <button class="toggle" data-target="syn16">Show/Hide Synopsis</button>
+              <p id="syn16" class="synopsis">Focuses heavily on the separate, intense character battles between the students, particularly an unexpected showdown that reveals the true nature of Panda.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/a/a0/Maki_crashing_into_a_stream_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20210206205354" alt="Episode 17">
+            <div class="episode-content">
+              <p><strong>Episode 17 - Kyoto Sister School Goodwill Event - Team Battle, Part 3 </strong></p>
+              <button class="toggle" data-target="syn17">Show/Hide Synopsis</button>
+              <p id="syn17" class="synopsis">Dives into the personal conflicts and backstories of several female sorcerers, particularly the strained relationship between the twin sisters Maki and Mai Zenin. </p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/9/90/Hanami%27s_intentions_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20210213011729" alt="Episode 18">
+            <div class="episode-content">
+              <p><strong>Episode 18 - Sage</strong></p>
+              <button class="toggle" data-target="syn18">Show/Hide Synopsis</button>
+              <p id="syn18" class="synopsis">Concludes the battle between Megumi and Kamo and features a shocking twist as the goodwill event is interrupted by an invasion of special-grade cursed spirits. </p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/0/0e/Yuji_after_hitting_Hanami_with_Black_Flash_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20210220042610" alt="Episode 19">
+            <div class="episode-content">
+              <p><strong>Episode 19 - Black Flash</strong></p>
+              <button class="toggle" data-target="syn19">Show/Hide Synopsis</button>
+              <p id="syn19" class="synopsis">Amps up the fight against the special-grade curse Hanami, as Yuji Itadori, Aoi Todo, and the other students are forced into a desperate battle for survival.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/1/1c/Satoru_Gojo_smirks_before_attacking_Juzo_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20210227073843" alt="Episode 20">
+            <div class="episode-content">
+              <p><strong>Episode 20 - Nonstandard</strong></p>
+              <button class="toggle" data-target="syn20">Show/Hide Synopsis</button>
+              <p id="syn20" class="synopsis">Intensifies the battle between the sorcerers and the special-grade curse Hanami, showcasing the successful coordination of Yuji Itadori and Aoi Todo and the subsequent intervention of Satoru Gojo. </p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/1/1e/Yuji_hitting_a_home_run_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20210306190627" alt="Episode 21">
+            <div class="episode-content">
+              <p><strong>Episode 21 - Jujutsu Koshien</strong></p>
+              <button class="toggle" data-target="syn21">Show/Hide Synopsis</button>
+              <p id="syn21" class="synopsis">Serves as a transitional episode. It wraps up the events of the curse invasion and shifts the tone with a lighthearted but competitive baseball game to conclude the sister school exchange event. </p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/d/d3/Yuji%2C_Megumi%2C_and_Nobara_head_inside_the_barrier_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20210313003121" alt="Episode 22">
+            <div class="episode-content">
+              <p><strong>Episode 22 - The Origin of Obedience</strong></p>
+              <button class="toggle" data-target="syn22">Show/Hide Synopsis</button>
+              <p id="syn22" class="synopsis">Shifts focus away from the main cast in Tokyo to introduce the Cursed Womb: Death Paintings and details a tragic past mission involving the second-year sorcerer, Maki Zenin.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/f/f7/Megumi_after_casting_his_Domain_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20210320063936" alt="Episode 23">
+            <div class="episode-content">
+              <p><strong>Episode 23 - The Origin of Obedience, Part 2</strong></p>
+              <button class="toggle" data-target="syn23">Show/Hide Synopsis</button>
+              <p id="syn23" class="synopsis">Concludes the Cursed Womb: Death Painting arc with an explosive, high-stakes battle as the first-year sorcerers face off against the formidable special-grade cursed brothers, Eso and Kechizu.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/f/f6/Nobara_using_Straw_Doll_Technique_against_the_Death_Paintings_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20210327184128" alt="Episode 24">
+            <div class="episode-content">
+              <p><strong>Episode 24 - Accomplices</strong></p>
+              <button class="toggle" data-target="syn24">Show/Hide Synopsis</button>
+              <p id="syn24" class="synopsis">Serves as the season finale. It provides closure to previous events and sets up future storylines while showcasing the strength of the first-year team and introducing a new antagonist.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Season 2 Episodes-->
+      <div id="season2-content" class="season-content" style="display:none;">
+        <h3>Season 2 - Episodes</h3>
+        <div class="episode-list">
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/a/a5/Satoru_Gojo_saves_Utahime_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20230706210432" alt="Episode 1">
+            <div class="episode-content">
+              <p><strong>Episode 1 — Hidden Inventory</strong></p>
+              <button class="toggle" data-target="syn2-1">Show/Hide Synopsis</button>
+              <p id="syn2-1" class="synopsis">Yuji Itadori encounters cursed objects and becomes host to Sukuna.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/3/38/Riko_fearless_to_assimilate_into_Tengen_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20230713182359" alt="Episode 2">
+            <div class="episode-content">
+              <p><strong>Episode 2 — Hidden Inventory, Part 2</strong></p>
+              <button class="toggle" data-target="syn2-2">Show/Hide Synopsis</button>
+              <p id="syn2-2" class="synopsis">Yuji Itadori encounters cursed objects and becomes host to Sukuna.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/f/f1/Toji_shows_himself_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20230720194633" alt="Episode 3">
+            <div class="episode-content">
+              <p><strong>Episode 3 — Hidden Inventory, Part 3</strong></p>
+              <button class="toggle" data-target="syn2-3">Show/Hide Synopsis</button>
+              <p id="syn2-3" class="synopsis">Yuji Itadori encounters cursed objects and becomes host to Sukuna.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/8/8e/Satoru_high_on_his_awakening_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20230728191800" alt="Episode 4">
+            <div class="episode-content">
+              <p><strong>Episode 4 — Hidden Inventory, Part 4</strong></p>
+              <button class="toggle" data-target="syn2-4">Show/Hide Synopsis</button>
+              <p id="syn2-4" class="synopsis">Yuji Itadori encounters cursed objects and becomes host to Sukuna.</p>
+            </div>
+          </div>
+          <div class="episode-item">
+            <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/b/bc/Yu_Haibara_in_2007_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20230809210630" alt="Episode 5">
+            <div class="episode-content">
+              <p><strong>Episode 5 — Premature Death</strong></p>
+              <button class="toggle" data-target="syn2-5">Show/Hide Synopsis</button>
+              <p id="syn2-5" class="synopsis">Yuji Itadori encounters cursed objects and becomes host to Sukuna.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
     <section>
       <h3>Story Overview</h3>

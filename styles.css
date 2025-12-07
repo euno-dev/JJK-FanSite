@@ -253,7 +253,7 @@ body.loaded .hero-content{opacity:1;transform:none}
 .link{color:var(--accent-2);text-decoration:none;font-weight:700}
 
 /* Cards */
-.card-grid{display:flex;gap:16px;flex-wrap:wrap}
+.card-grid{display:flex;gap:50px;flex-wrap:wrap}
 .card{background:linear-gradient(180deg, rgba(0, 0, 0, 0.01), transparent);padding:14px;border-radius:12px;flex:1;min-width:180px;text-align:center;transition:transform .2s, box-shadow .2s;border:1px solid var(--soft)}
 .card img{width:100%;height:auto;border-radius:8px}
 .card h4{margin:10px 0 6px}
@@ -435,6 +435,7 @@ footer{background-color:#050505;padding:18px;text-align:center;color:var(--muted
   .slide{min-width:100%}
 
 }
+
 
 
 

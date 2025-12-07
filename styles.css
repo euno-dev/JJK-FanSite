@@ -375,7 +375,7 @@ body.loaded .hero-content{opacity:1;transform:none}
 
 /* Toggle button with custom image */
 .toggle{
-  background: url('assets/toggle-button.png') center / contain no-repeat;
+  background: url('assets/pictures/toggle-button.png') center / contain no-repeat;
   border: none;
   color: transparent;
   padding: 0;

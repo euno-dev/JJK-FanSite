@@ -31,7 +31,7 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.25;  
+  opacity: 0.5;  
   z-index: -1;
   filter: brightness(0.7);
   border: 5px solid red; /* debug: shows overlay area */
@@ -96,6 +96,7 @@ body.episode-page .bgjujutsu5::before {
 }
 
 /* Base overlay for all pages */
+
 
 
 

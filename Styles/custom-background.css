@@ -70,8 +70,13 @@ body.about-page::before {
 
 body.contact-page::before {
   background: linear-gradient(to bottom, #000000, #001a00);
+   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-
+main.container {
+  flex: 1; /* pushes footer down if content is short */
+}
 
 #bg-video {
   position: fixed;
@@ -117,6 +122,7 @@ body.contact-page::before {
 }
 
 /* Base overlay for all pages */
+
 
 
 

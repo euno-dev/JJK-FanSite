@@ -5,6 +5,21 @@ body {
   color: var(--text-color, #eaeef2);
 }
 
+
+
+.bgjujutsu,
+.bgjujutsu-2,
+.gifjujutsu {
+  background-image: none !important;
+  background: transparent !important;
+}
+
+
+
+
+
+
+
 .bgjujutsu5 {
   position: relative;
   overflow: hidden;
@@ -33,21 +48,6 @@ body.villains-page .bgjujutsu5::before {
 body.episode-page .bgjujutsu5::before {
   background-image: url("../assets/pictures/backgrounds/eps.png");
 }
-
-
-.bgjujutsu,
-.bgjujutsu-2,
-.gifjujutsu {
-  background-image: none !important;
-  background: transparent !important;
-}
-
-
-
-
-
-
-
 
 
 
@@ -96,6 +96,7 @@ body.episode-page .bgjujutsu5::before {
 }
 
 /* Base overlay for all pages */
+
 
 
 

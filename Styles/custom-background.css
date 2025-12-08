@@ -38,7 +38,12 @@ body.episode-page .bgjujutsu5::before {
 }
 
 
-
+.bgjujutsu,
+.bgjujutsu-2,
+.gifjujutsu {
+  background-image: none !important;
+  background: transparent !important;
+}
 
 
 
@@ -94,6 +99,7 @@ body.episode-page .bgjujutsu5::before {
 }
 
 /* Base overlay for all pages */
+
 
 
 

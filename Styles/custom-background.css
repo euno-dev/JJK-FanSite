@@ -80,6 +80,9 @@ body.villains-page .bgjujutsu::before {
   background-image: url("assets/pictures/backgrounds/vill.jpeg");
 }
 
+body.episode-page .bgjujutsu::before {
+  background-image: url("assets/pictures/backgrounds/eps.png");
+}
 
 
 

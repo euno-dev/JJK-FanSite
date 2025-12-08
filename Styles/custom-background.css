@@ -20,33 +20,37 @@ body {
 
 
 
-.bgjujutsu5 {
-  position: relative;
-  overflow: hidden;
-}
-
+/* Base wrapper */
 .bgjujutsu5::before {
   content: "";
-  position: absolute;
+  position: fixed;  /* full-page coverage */
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.5;  
+  background-repeat: no-repeat;
   z-index: -1;
-  filter: brightness(0.7);
-  border: 5px solid red; /* debug: shows overlay area */
+  opacity: 1; /* overall opacity */
 }
 
+/* Characters page */
 body.characters-page .bgjujutsu5::before {
-  background-image: url("../assets/pictures/backgrounds/char.png");
+  background-image: 
+    linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7)),
+    url("assets/pictures/backgrounds/char.png");
 }
 
+/* Villains page */
 body.villains-page .bgjujutsu5::before {
-  background-image: url("../assets/pictures/backgrounds/vill.jpeg");
+  background-image: 
+    linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(50,0,0,0.7)), /* redish tone */
+    url("assets/pictures/backgrounds/vill.jpeg");
 }
 
+/* Episodes page */
 body.episode-page .bgjujutsu5::before {
-  background-image: url("../assets/pictures/backgrounds/eps.png");
+  background-image: 
+    linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,50,0.7)), /* bluish tone */
+    url("assets/pictures/backgrounds/eps.png");
 }
 
 
@@ -96,6 +100,7 @@ body.episode-page .bgjujutsu5::before {
 }
 
 /* Base overlay for all pages */
+
 
 
 

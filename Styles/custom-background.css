@@ -29,11 +29,6 @@ body {
   animation: gradientShift 15s ease infinite;
 }
 
-/* Home page gradient */
-body.home-page {
-  background: linear-gradient(135deg, #ff4d4d, #ff9900, #6f00ff); /* red, orange, purple */
-}
-
 /* Characters page gradient */
 body.characters-page {
   background: linear-gradient(135deg, #6f00ff, #1e90ff, #ff4d4d); /* purple, blue, red */
@@ -116,6 +111,7 @@ body.about-page {
 }
 
 /* Base overlay for all pages */
+
 
 
 

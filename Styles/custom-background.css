@@ -53,6 +53,34 @@ body {
   body { background: #000; }
 }
 
+/* Base overlay for all pages */
+.bgjujutsu {
+  position: relative;
+  overflow: hidden;
+}
+
+.bgjujutsu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;  /* adjust for subtlety */
+  z-index: -1;
+  filter: brightness(0.7); /* optional: slightly darken */
+}
+
+/* Characters page background */
+body.characters-page .bgjujutsu::before {
+  background-image: url("assets/pictures/backgrounds/vill.png");
+}
+
+/* Villains page background */
+body.villains-page .bgjujutsu::before {
+  background-image: url("assets/pictures/backgrounds/vill2.png");
+}
+
+
 
 
 

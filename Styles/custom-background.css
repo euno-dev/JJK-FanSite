@@ -19,56 +19,61 @@ body {
 
 
 
-/* Base settings for all pages */
-/* Base: ensure body covers whole page */
-body {
+/* Ensure full page height */
+html, body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  color: var(--text-color, #eaeef2);
-  font-family: 'Poppins', sans-serif;
 }
 
-/* Home page: black → dark purple */
-body.home-page {
+/* Base for all pages */
+body {
+  position: relative;
+  color: var(--text-color, #eaeef2);
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  z-index: 0;
+}
+
+/* Gradient overlay for all pages */
+body::before {
+  content: "";
+  position: fixed;       /* fixed ensures it stays behind content */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;  /* ensures it doesn’t block clicks */
+  background: linear-gradient(to bottom, #000000, #1a001a); /* default, can override per page */
+}
+
+/* Page-specific gradients */
+body.home-page::before {
   background: linear-gradient(to bottom, #000000, #0d001a);
 }
 
-/* Characters page: black → dark violet */
-body.characters-page {
+body.characters-page::before {
   background: linear-gradient(to bottom, #000000, #1a001a);
 }
 
-/* Villains page: black → dark red */
-body.villains-page {
+body.villains-page::before {
   background: linear-gradient(to bottom, #000000, #1a0000);
 }
 
-/* Episodes page: black → dark blue */
-body.episode-page {
+body.episode-page::before {
   background: linear-gradient(to bottom, #000000, #00001a);
 }
 
-/* Gallery page: black → dark magenta */
-body.gallery-page {
+body.gallery-page::before {
   background: linear-gradient(to bottom, #000000, #1a0010);
 }
 
-/* About page: black → dark teal */
-body.about-page {
+body.about-page::before {
   background: linear-gradient(to bottom, #000000, #001a1a);
 }
 
-/* Contact page: black → dark green */
-body.contact-page {
+body.contact-page::before {
   background: linear-gradient(to bottom, #000000, #001a00);
-}
-
-/* Optional: footer and other containers remain transparent */
-header, main, footer, .container {
-  position: relative;
-  z-index: 1;
-  background: transparent;
 }
 
 
@@ -116,6 +121,7 @@ header, main, footer, .container {
 }
 
 /* Base overlay for all pages */
+
 
 
 

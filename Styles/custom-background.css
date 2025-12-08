@@ -32,12 +32,7 @@ body {
 }
 
 
-.bgjujutsu,
-.bgjujutsu-2,
-.gifjujutsu {
-  background-image: none !important;
-  background: transparent !important;
-}
+
 
 
 .hero-wave{display:none !important}
@@ -65,24 +60,27 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.25;  /* adjust for subtlety */
+  opacity: 0.25;  
   z-index: -1;
-  filter: brightness(0.7); /* optional: slightly darken */
+  filter: brightness(0.7);
 }
 
-/* Characters page background */
+/* Characters page */
 body.characters-page .bgjujutsu5::before {
   background-image: url("assets/pictures/backgrounds/char.png");
 }
 
-/* Villains page background */
+/* Villains page */
 body.villains-page .bgjujutsu5::before {
   background-image: url("assets/pictures/backgrounds/vill.jpeg");
 }
 
+/* Episodes page */
 body.episode-page .bgjujutsu5::before {
   background-image: url("assets/pictures/backgrounds/eps.png");
 }
+
+
 
 
 

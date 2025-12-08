@@ -19,41 +19,57 @@ body {
 
 
 
-
-/* Base wrapper */
-.bgjujutsu5::before {
-  content: "";
-  position: fixed;  /* full-page coverage */
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  opacity: 1; /* overall opacity */
+/* Base settings for all pages */
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color, #eaeef2);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
 }
 
-/* Characters page */
-body.characters-page .bgjujutsu5::before {
-  background-image: 
-    linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7)),
-    url("assets/pictures/backgrounds/char.png");
+/* Home page gradient */
+body.home-page {
+  background: linear-gradient(135deg, #ff4d4d, #ff9900, #6f00ff); /* red, orange, purple */
 }
 
-/* Villains page */
-body.villains-page .bgjujutsu5::before {
-  background-image: 
-    linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(50,0,0,0.7)), /* redish tone */
-    url("assets/pictures/backgrounds/vill.jpeg");
+/* Characters page gradient */
+body.characters-page {
+  background: linear-gradient(135deg, #6f00ff, #1e90ff, #ff4d4d); /* purple, blue, red */
 }
 
-/* Episodes page */
-body.episode-page .bgjujutsu5::before {
-  background-image: 
-    linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,50,0.7)), /* bluish tone */
-    url("assets/pictures/backgrounds/eps.png");
+/* Villains page gradient */
+body.villains-page {
+  background: linear-gradient(135deg, #1e90ff, #ff4d4d, #6f00ff); /* blue, red, purple */
 }
 
+/* Episodes page gradient */
+body.episode-page {
+  background: linear-gradient(135deg, #ff9900, #ff4d4d, #1e90ff); /* orange, red, blue */
+}
 
+/* Gallery page gradient */
+body.gallery-page {
+  background: linear-gradient(135deg, #6f00ff, #ff4d4d, #1e90ff); /* purple, red, blue */
+}
+
+/* Contact page gradient */
+body.contact-page {
+  background: linear-gradient(135deg, #ff4d4d, #1e90ff, #6f00ff); /* red, blue, purple */
+}
+
+/* About page gradient */
+body.about-page {
+  background: linear-gradient(135deg, #1e90ff, #6f00ff, #ff9900); /* blue, purple, orange */
+}
+
+/* Optional animated gradient shift for all pages */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
 
 #bg-video {
@@ -100,6 +116,7 @@ body.episode-page .bgjujutsu5::before {
 }
 
 /* Base overlay for all pages */
+
 
 
 

@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   setGreeting();
   setupCarousel();
+  setupVillainCarousel();
   setupSynopsisToggles();
   setupSeasonTabs();
   setupLightbox();
@@ -167,7 +168,62 @@ function setupCarousel(){
   startAutoPlay();
 }
 
-// Toggle synopsis
+// Carousel for villains
+function setupVillainCarousel(){
+  const slidesContainer = document.getElementById('villainSlides');
+  if(!slidesContainer) return;
+  
+  const slides = Array.from(slidesContainer.querySelectorAll('.slide'));
+  const slideCount = slides.length;
+  let currentIndex = 0;
+  let autoPlayTimer = null;
+  
+  // Set first slide as active
+  slides[0].classList.add('active');
+  
+  function showSlide(index) {
+    currentIndex = (index + slideCount) % slideCount;
+    slides.forEach((slide, idx) => {
+      if(idx === currentIndex) {
+        // Remove and re-add active class to trigger animation
+        slide.classList.remove('active');
+        // Force reflow to restart animation
+        void slide.offsetWidth;
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+  }
+  
+  function startAutoPlay() {
+    autoPlayTimer = setInterval(() => {
+      showSlide(currentIndex + 1);
+    }, 5000);
+  }
+  
+  const prevBtn = document.getElementById('prevVillain');
+  const nextBtn = document.getElementById('nextVillain');
+  
+  if(prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      clearInterval(autoPlayTimer);
+      showSlide(currentIndex - 1);
+      startAutoPlay();
+    });
+  }
+  
+  if(nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      clearInterval(autoPlayTimer);
+      showSlide(currentIndex + 1);
+      startAutoPlay();
+    });
+  }
+  
+  // Start auto-play
+  startAutoPlay();
+}
 function setupSynopsisToggles(){
   document.querySelectorAll('.toggle').forEach(btn => {
     btn.addEventListener('click', () => {

@@ -22,19 +22,16 @@ body {
   border: 5px solid red; /* debug: shows overlay area */
 }
 
-/* Characters page */
 body.characters-page .bgjujutsu5::before {
-  background-image: url("assets/pictures/backgrounds/char.png");
+  background-image: url("../assets/pictures/backgrounds/char.png");
 }
 
-/* Villains page */
 body.villains-page .bgjujutsu5::before {
-  background-image: url("assets/pictures/backgrounds/vill.jpeg");
+  background-image: url("../assets/pictures/backgrounds/vill.jpeg");
 }
 
-/* Episodes page */
 body.episode-page .bgjujutsu5::before {
-  background-image: url("assets/pictures/backgrounds/eps.png");
+  background-image: url("../assets/pictures/backgrounds/eps.png");
 }
 
 
@@ -99,6 +96,7 @@ body.episode-page .bgjujutsu5::before {
 }
 
 /* Base overlay for all pages */
+
 
 
 

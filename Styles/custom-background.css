@@ -20,51 +20,64 @@ body {
 
 
 /* Base settings for all pages */
-body {
-  min-height: 100vh;
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
+  color: #eaeef2;
   font-family: 'Poppins', sans-serif;
-  color: var(--text-color, #eaeef2);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
 }
 
-/* Characters page gradient */
+/* Subtle dark gradients for each page */
 body.characters-page {
-  background: linear-gradient(135deg, #6f00ff, #1e90ff, #ff4d4d); /* purple, blue, red */
+  background: linear-gradient(to bottom, rgba(30, 0, 60, 0.3), rgba(40, 0, 80, 0.3));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* Villains page gradient */
 body.villains-page {
-  background: linear-gradient(135deg, #1e90ff, #ff4d4d, #6f00ff); /* blue, red, purple */
+  background: linear-gradient(to bottom, rgba(60, 0, 0, 0.3), rgba(80, 0, 0, 0.3));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* Episodes page gradient */
 body.episode-page {
-  background: linear-gradient(135deg, #ff9900, #ff4d4d, #1e90ff); /* orange, red, blue */
+  background: linear-gradient(to bottom, rgba(0, 20, 60, 0.3), rgba(0, 40, 100, 0.3));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* Gallery page gradient */
+body.home-page {
+  background: linear-gradient(to bottom, rgba(20, 10, 0, 0.3), rgba(40, 20, 0, 0.3));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 body.gallery-page {
-  background: linear-gradient(135deg, #6f00ff, #ff4d4d, #1e90ff); /* purple, red, blue */
+  background: linear-gradient(to bottom, rgba(10, 30, 20, 0.3), rgba(20, 60, 40, 0.3));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* Contact page gradient */
 body.contact-page {
-  background: linear-gradient(135deg, #ff4d4d, #1e90ff, #6f00ff); /* red, blue, purple */
+  background: linear-gradient(to bottom, rgba(40, 10, 20, 0.3), rgba(60, 20, 40, 0.3));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* About page gradient */
 body.about-page {
-  background: linear-gradient(135deg, #1e90ff, #6f00ff, #ff9900); /* blue, purple, orange */
+  background: linear-gradient(to bottom, rgba(20, 20, 60, 0.3), rgba(50, 30, 90, 0.3));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* Optional animated gradient shift for all pages */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 
 
 #bg-video {
@@ -111,6 +124,7 @@ body.about-page {
 }
 
 /* Base overlay for all pages */
+
 
 
 

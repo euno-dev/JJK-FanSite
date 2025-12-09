@@ -337,6 +337,40 @@ body.loaded .hero-content{opacity:1;transform:none}
   font-size: 0.95rem;
 }
 
+/* Story Overview */
+.story-overview {
+  margin-top: 40px;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(255, 59, 59, 0.08), rgba(100, 181, 246, 0.06));
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.story-overview h3 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
+
+.story-overview p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+.story-overview a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.story-overview a:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
+
 /* Season Tabs */
 .season-tabs {
   display: flex;

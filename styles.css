@@ -407,15 +407,12 @@ body.loaded .hero-content{opacity:1;transform:none}
 .contact-form{display:flex;flex-direction:column;gap:30px;max-width:5000px}
 .contact-form label{display:flex;flex-direction:column;font-weight:600;color:var(--muted);gap:8px}
 .contact-form input,.contact-form textarea{padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:#0b0c0d;color:#fff;font-size:1rem}
-.contact-form input{width:100%;min-width:600px}
+.contact-form input{width:100%;min-width:unset}
 .contact-form textarea{min-height:300px;resize:vertical;width:100%}
 .contact-form button{align-self:flex-start;background:linear-gradient(90deg, #00aa44, #00ff77);color:#fff;border:none;padding:12px 30px;border-radius:8px;font-weight:600;cursor:pointer;box-shadow:0 0 20px rgba(0, 255, 119, 0.5), 0 0 40px rgba(0, 170, 68, 0.3);transition:all 0.3s ease}
 .contact-form button:hover{box-shadow:0 0 30px rgba(0, 255, 119, 0.8), 0 0 60px rgba(0, 170, 68, 0.5);transform:translateY(-2px)}
 .thank-you{display:none;background:var(--accent);color:white;padding:14px;border-radius:10px;margin-top:12px}
-
-.bgjujutsu{background-image:url('https://i.imgur.com/Ye3KAQ3.gif');background-repeat:no-repeat;background-attachment:fixed;}
-.bgjujutsu-2{background-image:url('https://i.imgur.com/Ye3KAQ3.gif');background-repeat:no-repeat;position:fixed;}
-.gifjujutsu{background-image:url('https://i.pinimg.com/originals/2a/b8/00/2ab8009531f2f262b607c33fff2f27de.gif');background-repeat:no-repeat;background-position:center;width:50%;height:auto;}
+/* Footer */
 footer{background-color:#050505;padding:18px;text-align:center;color:var(--muted);font-size:0.9rem;margin-top:auto}
 
 @media (max-width:880px){
@@ -431,12 +428,73 @@ footer{background-color:#050505;padding:18px;text-align:center;color:var(--muted
 }
 
 @media (max-width:880px){
+  .site-header{flex-direction:column;gap:12px;padding:10px 16px}
+  .site-header h1{font-size:0.9rem}
+  .site-header nav{gap:8px;flex-wrap:wrap}
+  .site-header nav a{margin-left:0;font-size:0.9rem;padding:6px 8px}
+  
   .hero-content{flex-direction:column;align-items:flex-start;padding:28px}
   .hero-right{width:100%}
+  .hero-title{font-size:2.5rem}
+  .hero-sub{font-size:1rem}
+  
   .char-row{justify-content:flex-start;overflow:auto}
   .slides{width:100%}
-  .slide{min-width:100%}
+  .slide{min-width:100%;width:100%}
+  
+  .carousel{flex-direction:column;gap:8px}
+  .carousel-btn{padding:4px}
+  .carousel-btn img{width:30px;height:30px}
+  
+  .card-grid{gap:20px;justify-content:center}
+  .card{max-width:300px;width:100%}
+  
+  .container{padding:0 12px}
+  .container-2{padding:16px;min-height:auto}
+  .container-3{padding:16px;min-height:auto}
+  
+  .contact-form{max-width:100%;gap:20px}
+  .contact-form input{min-width:unset;width:100%}
+  .contact-form textarea{min-height:200px;width:100%}
+  
+  h1{font-size:1.5rem !important}
+  h2{font-size:1.3rem !important}
+  h3{font-size:1.1rem !important}
+  
+  .season-tabs{flex-direction:column;gap:12px;align-items:center}
+  .season-tabs img{max-width:200px;height:auto}
+  
+  .episode-list{flex-direction:column;gap:16px}
+  .episode-item{flex-direction:column;gap:12px}
+  .episode-item img{max-width:100%;height:auto;max-height:200px}
+  
+  footer{padding:12px;font-size:0.85rem}
+}
 
+@media (max-width:480px){
+  .site-header h1{font-size:0.8rem}
+  .site-header nav a{font-size:0.75rem;padding:4px 6px}
+  
+  .hero-title{font-size:1.8rem}
+  .hero-sub{font-size:0.9rem}
+  
+  .carousel-btn{padding:2px}
+  .carousel-btn img{width:25px;height:25px}
+  
+  .card{max-width:100%}
+  
+  .contact-form{gap:16px}
+  .contact-form input,.contact-form textarea{padding:12px;font-size:16px}
+  
+  h1{font-size:1.2rem !important}
+  h2{font-size:1rem !important}
+  h3{font-size:0.95rem !important}
+  
+  .season-tabs img{max-width:150px}
+  
+  .episode-item{gap:10px}
+  
+  footer{padding:8px;font-size:0.8rem}
 }
 
 

@@ -239,6 +239,7 @@ function setupSynopsisToggles(){
 function setupSeasonTabs(){
   const posters = document.querySelectorAll('.season-poster');
   const contents = document.querySelectorAll('.season-content');
+  const overviews = document.querySelectorAll('.story-overview');
   
   posters.forEach((poster, index) => {
     poster.addEventListener('click', () => {
@@ -248,15 +249,25 @@ function setupSeasonTabs(){
       // Hide all content
       contents.forEach(c => c.style.display = 'none');
       
+      // Hide all overviews
+      overviews.forEach(o => o.style.display = 'none');
+      
       // Add active class to clicked poster
       poster.classList.add('active');
       
-      // Show corresponding content
+      // Show corresponding content and overview
       const seasonName = poster.getAttribute('data-season');
       const contentId = seasonName + '-content';
+      const overviewId = seasonName + '-overview';
+      
       const contentDiv = document.getElementById(contentId);
+      const overviewDiv = document.getElementById(overviewId);
+      
       if(contentDiv) {
         contentDiv.style.display = 'block';
+      }
+      if(overviewDiv) {
+        overviewDiv.style.display = 'block';
       }
     });
   });

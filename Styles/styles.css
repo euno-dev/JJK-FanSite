@@ -1,0 +1,577 @@
+@font-face {
+    font-family: "Poppins", sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+}
+
+:root{
+  /* JJK-inspired darker palette (deeper tones) */
+  --accent:#6b0000; /* deep red */
+  --accent-2:#001f3f; /* deep blue */
+  --accent-3:#2b0036; /* deep purple (uniform-like) */
+  --muted:#9aa0a6;
+  --bg:#050505;
+  --panel:#0b0b0c;
+  --glass: rgba(255,255,255,0.02);
+  --soft: rgba(255,255,255,0.015);
+  --radius:10px;
+}
+
+/* Global reset and base */
+*{margin: 0; padding: 0; box-sizing:inherit}
+html,body{height:100%; box-sizing: border-box;}
+body{display:flex;flex-direction:column;margin:0;background:transparent;color:#eaeef2;font-family: 'Poppins', Arial, sans-serif;transition:background 0.5s ease}
+
+/* Smooth content reveal */
+body{opacity:1;transform:translateY(6px);transition:opacity .5s ease, transform .5s ease}
+body.loaded{opacity:1;transform:none}
+
+.site-header{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);background-color:var(--bg); padding:14px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:0px solid rgba(255,255,255,0.03);position:sticky;top:0;width:100;backdrop-filter: blur(4px);z-index:30}
+.site-header h1{margin:0;font-size:1.05rem;color:#fff;font-weight:700}
+.site-header nav{display:flex;align-items:center}
+.site-header nav a{margin-left:14px;color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;transition:color .18s ease, background .18s ease}
+.site-header nav a:hover{color:var(--accent-2);background:var(--glass)}
+.site-header nav a.active{color:var(--accent);background:linear-gradient(90deg, rgba(255,59,59,0.08), rgba(100,181,246,0.03))}
+
+.container{max-width:1100px;margin: auto;padding:0 20px;}
+.container-2{max-width:1100px;margin: auto;padding:20px;min-height: 100vh;}
+.container-3{max-width:1100px;margin: auto;padding:20px;min-height: 70vh;}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding-bottom:120px}
+.hero-bg{position:absolute;inset:0;z-index:1;mix-blend-mode:normal;opacity:0;
+  /* deeper dark red / purple / blue gradient for cursed energy - DISABLED */
+  background: transparent;
+  background-size: 300% 300%;
+  animation: none;
+}
+.hero-content{position:relative;display:flex;flex-direction:column;align-items:center;gap:40px;padding:56px 12px;z-index:2;opacity:1;transform:translateY(8px);transition:opacity .6s ease, transform .6s ease;justify-content:center}
+body.loaded .hero-content{opacity:1;transform:none}
+.hero-left{flex:1;min-width:220px;text-align:center}
+.hero-title{font-family:'Merriweather', serif;font-size:4.5rem;margin:0 0 20px;color:#fff;line-height:1.1;text-align:center}
+/* Image title replacement */
+.hero-title-img{max-width:760px;width:100%;height:auto;display:block;margin:0 auto 20px;opacity:0;animation:fadeInDown 0.8s ease-out 0.2s forwards}
+.hero-sub {
+  color: #fff; /* text color */
+  animation: fadeInDown 0.8s ease-out 0.2s forwards;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: center;
+  text-shadow: 
+     0 0 6px #fff,      /* small bright glow */
+     0 0 12px #ff6b6b,  /* red-ish glow */
+     0 0 18px #ff4757,  /* deeper red glow */
+     0 0 24px #ff6b6b;  /* soft spread */
+}
+
+
+
+
+.hero-ctas {display: flex;flex-wrap: wrap;gap: 12px 18px;justify-content: center;margin-bottom: 10px;margin-top: 30px;opacity: 0;animation: fadeIn 0.8s ease-out 0.75s forwards;}
+
+/* Glow effects for CTA buttons */
+.hero-ctas .btn:nth-child(1){background:rgba(0,100,255,0.8) !important;box-shadow:0 0 20px rgba(0,100,255,0.6), 0 0 40px rgba(0,150,255,0.4) !important}
+.hero-ctas .btn:nth-child(1):hover{box-shadow:0 0 30px rgba(0,100,255,0.9), 0 0 60px rgba(0,150,255,0.7) !important}
+.hero-ctas .btn:nth-child(2){background:rgba(255,50,50,0.8) !important;color:#fff !important;box-shadow:0 0 20px rgba(255,50,50,0.6), 0 0 40px rgba(255,100,100,0.4) !important}
+.hero-ctas .btn:nth-child(2):hover{box-shadow:0 0 30px rgba(255,50,50,0.9), 0 0 60px rgba(255,100,100,0.7) !important}
+.btn{display:inline-block;color:white;padding:11px 18px;border-radius:12px;text-decoration:none;border:1px solid var(--soft);font-weight:600}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 8px 26px rgba(100,30,30,0.12)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+.greeting.small{ color: #fff; /* soft purple */
+  font-style: italic;
+  margin-top: 8px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.35s forwards;
+  text-align: center;
+  text-shadow:
+    0 0 2px #c28aff,
+    0 0 6px #a24fff,
+    0 0 10px #7a00ff; /* subtle purple glow */}
+
+.hero-right{width:360px;text-align:center;margin:0 auto}
+.char-row{display:flex;gap:12px;justify-content:center;flex-wrap:nowrap}
+.char-row img{width:110px;height:160px;object-fit:cover;border-radius:8px;border:2px solid rgba(255,255,255,0.03);transition:transform .25s, box-shadow .25s;flex-shrink:0;opacity:0;animation:fadeInUp 0.8s ease-out forwards}
+.char-row img:nth-child(1){animation-delay:0.4s}
+.char-row img:nth-child(2){animation-delay:0.5s}
+.char-row img:nth-child(3){animation-delay:0.6s}
+.char-row img:nth-child(4){animation-delay:0.7s}
+.char-row img:hover{transform:translateY(-10px) scale(1.06);box-shadow:0 16px 40px rgba(0,0,0,0.6)}
+.char-caption{color: #fff; /* soft blue text */
+  font-size: 0.8rem;
+  margin-top: 16px;
+  font-style: italic;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.8s forwards;
+  text-align: center;
+  text-shadow:
+    0 0 2px #66ccff,
+    0 0 6px #3399ff,
+    0 0 10px #0066ff; /* subtle glow effect */
+}
+.hero-wave{display:block;width:100%;height:80px;margin-top:28px;margin-bottom:20px}
+
+/* Cursed energy coating effect for interactive buttons */
+.btn{position:relative;z-index:1;overflow:visible}
+.btn::before{ /* combined fire + soft blobs for every button */
+  content:"";position:absolute;left:0;right:0;top:0;bottom:0;border-radius:14px;pointer-events:none;z-index:0;
+  /* flames near the bottom + softer colored blobs */
+  background: radial-gradient(40% 30% at 30% 85%, rgba(255,180,64,0.95), transparent 8%),
+              radial-gradient(30% 25% at 70% 88%, rgba(255,120,64,0.9), transparent 10%),
+              radial-gradient(40% 40% at 20% 20%, rgba(107,0,0,0.12), transparent 25%),
+              radial-gradient(30% 30% at 80% 80%, rgba(43,0,54,0.08), transparent 30%);
+  filter:blur(8px) saturate(1.05);
+  opacity:0;transform:translateY(6px) scale(0.98);transition:opacity .22s ease, transform .28s ease;
+}
+.btn::after{ /* swirling cursed energy + subtle overlay */
+  content:"";position:absolute;left:-8px;right:-8px;top:-8px;bottom:-8px;border-radius:16px;pointer-events:none;z-index:-1;
+  background: conic-gradient(from 0deg, rgba(107,0,0,0.28), rgba(43,0,54,0.20), rgba(0,31,63,0.18));
+  filter:blur(12px) contrast(1.05);
+  opacity:0;transform:scale(.98);transition:opacity .2s ease, transform .2s ease;
+}
+.btn:hover::before, .btn:focus::before, .btn:focus-visible::before{
+  opacity:1;transform:translateY(-2px) scale(1);
+}
+.btn:hover::after, .btn:focus::after, .btn:focus-visible::after{
+  opacity:0.92;transform:scale(1);animation:spin 4.2s linear infinite;
+}
+
+/* Purple button */
+.btn-purple {
+  background: linear-gradient(90deg, #8a2be2, #b266ff); /* deep purple → lighter purple */
+  color: #fff;
+  box-shadow: 0 8px 26px rgba(138, 43, 226, 0.3), 0 0 40px rgba(178, 102, 255, 0.2);
+  border: 1px solid rgba(255,255,255,0.04);
+  font-weight: 600;
+}
+
+.btn-purple:hover {
+  box-shadow: 0 0 30px rgba(138, 43, 226, 0.5), 0 0 60px rgba(178, 102, 255, 0.35);
+}
+
+/* Strong, visible glow for any focused or hovered button */
+.btn:hover, .btn:focus, .btn:focus-visible{
+  transform:translateY(-2px);
+  box-shadow:
+    0 20px 50px rgba(11,3,3,0.18),
+    0 6px 30px rgba(43,0,54,0.12),
+    0 0 40px rgba(0,31,63,0.10);
+  outline: none;
+}
+
+/* Ensure outline for keyboard users remains visible but subtle */
+.btn:focus-visible{box-shadow:0 20px 60px rgba(107,0,0,0.22), 0 0 40px rgba(43,0,54,0.14)}
+.btn:focus, .btn:focus-visible{outline:none;box-shadow:0 6px 22px rgba(0,0,0,0.45);}
+.btn:hover, .btn:focus{transform:translateY(-2px)}
+
+@keyframes spin{from{transform:rotate(0deg) scale(1)}to{transform:rotate(360deg) scale(1)}}
+
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* Optional stronger cursed variant */
+.btn.cursed{box-shadow:0 14px 48px rgba(255,59,59,0.08)}
+
+/* Black flash + sparkle effect for specific buttons */
+.btn.flash{position:relative;overflow:visible}
+.btn.flash::before{ /* black flash layer */
+  content:"";position:absolute;left:-6px;right:-6px;top:-6px;bottom:-6px;border-radius:14px;z-index:2;pointer-events:none;
+  background:rgba(0,0,0,0.0);mix-blend-mode:normal;opacity:0;transition:opacity .12s ease;
+}
+.btn.flash::after{ /* sparkle layer using multiple radial gradients */
+  content:"";position:absolute;left:-14px;right:-14px;top:-14px;bottom:-14px;border-radius:18px;z-index:1;pointer-events:none;
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.85) 0 2px, transparent 6px),
+              radial-gradient(circle at 80% 40%, rgba(255,255,255,0.7) 0 2px, transparent 6px),
+              radial-gradient(circle at 50% 80%, rgba(255,255,255,0.6) 0 2px, transparent 6px);
+  filter:blur(6px);opacity:0;transform:scale(.9);transition:opacity .18s ease, transform .18s ease;
+}
+
+/* Trigger on hover/focus/focus-visible for both mouse and keyboard */
+.btn.flash:hover::before, .btn.flash:focus::before, .btn.flash:focus-visible::before{
+  opacity:0.72;transition:opacity .08s linear;
+}
+.btn.flash:hover::after, .btn.flash:focus::after, .btn.flash:focus-visible::after{
+  opacity:1;transform:scale(1);transition:opacity .12s ease, transform .18s ease;animation:flashSpark 900ms ease-out 1;
+}
+
+@keyframes flashSpark{
+  0%{opacity:0;transform:scale(.9) translateY(6px)}
+  30%{opacity:1;transform:scale(1.04) translateY(-2px)}
+  70%{opacity:0.6;transform:scale(1) translateY(0)}
+  100%{opacity:0;transform:scale(1.02) translateY(-3px)}
+}
+
+/* Fire overlay effect for buttons */
+.btn.fire{position:relative;overflow:visible}
+.btn.fire::before{
+  content:"";position:absolute;left:6px;right:6px;bottom:-6px;height:60%;border-radius:10px;pointer-events:none;z-index:0;
+  background: radial-gradient(60% 40% at 30% 80%, rgba(255,180,64,0.95), transparent 20%),
+              radial-gradient(40% 30% at 70% 85%, rgba(255,120,64,0.9), transparent 18%),
+              linear-gradient(180deg, rgba(255,60,60,0.7), rgba(120,10,140,0.16));
+  mix-blend-mode:screen;filter:blur(10px) contrast(1.05);
+  transform-origin:50% 100%;opacity:0;transition:opacity .12s ease, transform .18s ease;
+}
+.btn.fire::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:100%;pointer-events:none;z-index:2;border-radius:10px;
+  background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.06), transparent 6%),
+              radial-gradient(circle at 20% 60%, rgba(255,255,255,0.04), transparent 6%);
+  mix-blend-mode:overlay;opacity:0;transition:opacity .12s ease;
+}
+
+/* Trigger flames on hover/focus */
+.btn.fire:hover::before, .btn.fire:focus::before, .btn.fire:focus-visible::before{
+  opacity:1;transform:translateY(-4px) scale(1.02);animation:flameFlicker 900ms ease-in-out infinite;
+}
+.btn.fire:hover::after, .btn.fire:focus::after, .btn.fire:focus-visible::after{
+  opacity:1;
+}
+
+@keyframes flameFlicker{
+  0%{transform:translateY(0) scaleX(1)}
+  20%{transform:translateY(-2px) scaleX(1.06)}
+  40%{transform:translateY(1px) scaleX(.98)}
+  60%{transform:translateY(-3px) scaleX(1.04)}
+  80%{transform:translateY(0) scaleX(1)}
+  100%{transform:translateY(0) scaleX(1)}
+}
+
+
+
+
+/* Features */
+.features{display:grid;grid-template-columns:1fr 1fr 1fr;gap:120px 60px;margin:150px auto;align-items:start}
+.features .feature:nth-child(2){margin-top:80px}
+.feature{background:#000;padding:20px;border-radius:var(--radius);border:1px solid var(--soft);transition:transform .22s ease, box-shadow .22s ease;opacity:0;animation:slideUpFeature 0.8s ease-out forwards}
+.feature:nth-child(1){animation-delay:0.2s}
+.feature:nth-child(2){animation-delay:0.4s}
+.feature:nth-child(3){animation-delay:0.6s}
+@keyframes slideUpFeature{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.feature:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+.feature h3{margin:0 0 8px}
+.feature p{color:var(--muted);margin:0 0 12px}
+.link{color:var(--accent-2);text-decoration:none;font-weight:700}
+
+/* Cards */
+.card-grid{display:flex;gap:50px;flex-wrap:wrap}
+.card{background:linear-gradient(180deg, rgba(0, 0, 0, 0.01), transparent);padding:14px;border-radius:12px;flex:1;min-width:180px;text-align:center;transition:transform .2s, box-shadow .2s;border:1px solid var(--soft)}
+.card img{width:100%;height:auto;border-radius:8px}
+.card h4{margin:10px 0 6px}
+.card p{color:var(--muted);font-size:0.95rem}
+
+/* Character mini-slideshow inside cards */
+.char-slideshow{position:relative;width:220px;margin:0 auto 10px;border-radius:10px;overflow:hidden}
+.char-slides{display:flex;transition:transform .35s ease;will-change:transform}
+.char-slide{min-width:220px;display:flex;align-items:center;justify-content:center;background:var(--panel);padding:6px}
+.char-slide img{width:100%;height:220px;object-fit:cover;border-radius:8px}
+.char-prev,.char-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.45);color:#fff;border:none;padding:6px 8px;border-radius:6px;cursor:pointer}
+.char-prev{left:6px}
+.char-next{right:6px}
+.char-prev:focus,.char-next:focus{outline:none;box-shadow:0 6px 18px rgba(0,0,0,0.5)}
+
+/* Carousel */
+.carousel{display:flex;align-items:center;justify-content:center;gap:12px;margin:20px 0}
+.carousel-btn{background:transparent;border:none;cursor:pointer;padding:8px;border-radius:8px;transition:transform 0.2s ease, opacity 0.2s ease;opacity:0.8}
+.carousel-btn:hover{opacity:1;transform:scale(1.1)}
+.carousel-btn:active{transform:scale(0.95)}
+.carousel-btn img{width:40px;height:40px;display:block}
+.slides{width:640px;height:auto;display:flex;justify-content:center;align-items:center;perspective:1000px}
+.slide{width:640px;padding:12px;background:transparent;border-radius:8px;text-align:center;display:none;opacity:0;animation:carouselFade 0.6s ease-in-out forwards}
+.slide.active{display:block;animation:carouselFade 0.6s ease-in-out forwards}
+.slide img{max-width:600px;max-height:400px;width:auto;height:auto;object-fit:contain;border-radius:8px}
+
+/* Cube effect for first 4 slides */
+.slide:nth-child(1) img,
+.slide:nth-child(2) img,
+.slide:nth-child(3) img,
+.slide:nth-child(4) img {
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.slide:nth-child(1).active img,
+.slide:nth-child(2).active img,
+.slide:nth-child(3).active img,
+.slide:nth-child(4).active img {
+  transform: rotateY(15deg) rotateX(10deg) perspective(1200px);
+  box-shadow: -15px 15px 30px rgba(0,0,0,0.5);
+}
+
+@keyframes carouselFade{
+  0%{opacity:0;transform:scale(0.95)}
+  100%{opacity:1;transform:scale(1)}
+}
+
+/* Episodes */
+.episode-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.episode-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 15px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease;
+}
+
+.episode-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.episode-item img {
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.episode-content {
+  flex: 1;
+}
+
+.episode-content p {
+  margin: 0 0 12px 0;
+}
+
+.episode-content strong {
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.episode-list .synopsis {
+  display: none;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Story Overview */
+.story-overview {
+  margin-top: 40px;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(255, 59, 59, 0.08), rgba(100, 181, 246, 0.06));
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.story-overview h3 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
+
+.story-overview p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+.story-overview a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.story-overview a:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
+
+/* Season Tabs */
+.season-tabs {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px 0 40px 0;
+  flex-wrap: wrap;
+}
+
+.season-poster {
+  width: 140px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  filter: brightness(0.8);
+}
+
+.season-poster:hover {
+  opacity: 1;
+  filter: brightness(1);
+  transform: scale(1.05);
+}
+
+.season-poster.active {
+  border-color: #ff6b6b;
+  opacity: 1;
+  filter: brightness(1.1);
+}
+
+.season-content {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Toggle button with custom image */
+.toggle{
+  background: url('../assets/pictures/toggle-button.png') center / contain no-repeat;
+  border: none;
+  color: transparent;
+  padding: 0;
+  width: 120px;
+  height: 40px;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 0;
+  font-weight: 500;
+  display: inline-block;
+  transition: opacity 0.3s ease;
+  margin-top: 8px;
+}
+
+.toggle:hover {
+  opacity: 0.85;
+}
+
+.toggle:active {
+  transform: scale(0.98);
+}
+
+/* Gallery */
+.gallery-grid img{width:100%;cursor:pointer;border-radius:8px;border:1px solid var(--soft)}
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.95));flex-direction:column}
+.lightbox img{max-width:90%;max-height:78%;border-radius:8px}
+
+/* Forms */
+.contact-form{display:flex;flex-direction:column;gap:30px;max-width:5000px}
+.contact-form label{display:flex;flex-direction:column;font-weight:600;color:var(--muted);gap:8px}
+.contact-form input,.contact-form textarea{padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:#0b0c0d;color:#fff;font-size:1rem}
+.contact-form input{width:100%;min-width:unset}
+.contact-form textarea{min-height:300px;resize:vertical;width:100%}
+.contact-form button{align-self:flex-start;background:linear-gradient(90deg, #00aa44, #00ff77);color:#fff;border:none;padding:12px 30px;border-radius:8px;font-weight:600;cursor:pointer;box-shadow:0 0 20px rgba(0, 255, 119, 0.5), 0 0 40px rgba(0, 170, 68, 0.3);transition:all 0.3s ease}
+.contact-form button:hover{box-shadow:0 0 30px rgba(0, 255, 119, 0.8), 0 0 60px rgba(0, 170, 68, 0.5);transform:translateY(-2px)}
+.thank-you{display:none;background:var(--accent);color:white;padding:14px;border-radius:10px;margin-top:12px}
+/* Footer */
+footer{background-color:#050505;padding:18px;text-align:center;color:var(--muted);font-size:0.9rem;margin-top:auto}
+
+@media (max-width:880px){
+  footer{margin-top:60px}
+}
+
+@keyframes colorShift{
+  0%{background-position:0% 50%;filter:hue-rotate(0deg)}
+  25%{background-position:50% 50%;filter:hue-rotate(12deg)}
+  50%{background-position:100% 50%;filter:hue-rotate(24deg)}
+  75%{background-position:50% 50%;filter:hue-rotate(12deg)}
+  100%{background-position:0% 50%;filter:hue-rotate(0deg)}
+}
+
+@media (max-width:880px){
+  .site-header{flex-direction:column;gap:12px;padding:10px 16px}
+  .site-header h1{font-size:0.9rem}
+  .site-header nav{gap:8px;flex-wrap:wrap}
+  .site-header nav a{margin-left:0;font-size:0.9rem;padding:6px 8px}
+  
+  .hero-content{flex-direction:column;align-items:flex-start;padding:28px}
+  .hero-right{width:100%}
+  .hero-title{font-size:2.5rem}
+  .hero-sub{font-size:1rem}
+  
+  .char-row{justify-content:flex-start;overflow:auto}
+  .slides{width:100%}
+  .slide{min-width:100%;width:100%}
+  
+  .carousel{flex-direction:column;gap:8px}
+  .carousel-btn{padding:4px}
+  .carousel-btn img{width:30px;height:30px}
+  
+  .card-grid{gap:20px;justify-content:center}
+  .card{max-width:300px;width:100%}
+  
+  .container{padding:0 12px}
+  .container-2{padding:16px;min-height:auto}
+  .container-3{padding:16px;min-height:auto}
+  
+  .contact-form{max-width:100%;gap:20px}
+  .contact-form input{min-width:unset;width:100%}
+  .contact-form textarea{min-height:200px;width:100%}
+  
+  h1{font-size:1.5rem !important}
+  h2{font-size:1.3rem !important}
+  h3{font-size:1.1rem !important}
+  
+  .season-tabs{flex-direction:column;gap:12px;align-items:center}
+  .season-tabs img{max-width:200px;height:auto}
+  
+  .episode-list{flex-direction:column;gap:16px}
+  .episode-item{flex-direction:column;gap:12px}
+  .episode-item img{max-width:100%;height:auto;max-height:200px}
+  
+  footer{padding:12px;font-size:0.85rem}
+}
+
+@media (max-width:480px){
+  .site-header h1{font-size:0.8rem}
+  .site-header nav a{font-size:0.75rem;padding:4px 6px}
+  
+  .hero-title{font-size:1.8rem}
+  .hero-sub{font-size:0.9rem}
+  
+  .carousel-btn{padding:2px}
+  .carousel-btn img{width:25px;height:25px}
+  
+  .card{max-width:100%}
+  
+  .contact-form{gap:16px}
+  .contact-form input,.contact-form textarea{padding:12px;font-size:16px}
+  
+  h1{font-size:1.2rem !important}
+  h2{font-size:1rem !important}
+  h3{font-size:0.95rem !important}
+  
+  .season-tabs img{max-width:150px}
+  
+  .episode-item{gap:10px}
+  
+  footer{padding:8px;font-size:0.8rem}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

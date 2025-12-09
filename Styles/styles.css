@@ -280,22 +280,6 @@ body.loaded .hero-content{opacity:1;transform:none}
 .slide.active{display:block;animation:carouselFade 0.6s ease-in-out forwards}
 .slide img{max-width:600px;max-height:400px;width:auto;height:auto;object-fit:contain;border-radius:8px}
 
-/* Cube effect for first 4 slides */
-.slide:nth-child(1) img,
-.slide:nth-child(2) img,
-.slide:nth-child(3) img,
-.slide:nth-child(4) img {
-  transition: transform 0.6s ease;
-  transform-style: preserve-3d;
-}
-
-.slide:nth-child(1).active img,
-.slide:nth-child(2).active img,
-.slide:nth-child(3).active img,
-.slide:nth-child(4).active img {
-  transform: rotateY(15deg) rotateX(10deg) perspective(1200px);
-  box-shadow: -15px 15px 30px rgba(0,0,0,0.5);
-}
 
 @keyframes carouselFade{
   0%{opacity:0;transform:scale(0.95)}
@@ -547,6 +531,7 @@ footer{background-color:#050505;padding:18px;text-align:center;color:var(--muted
   
   footer{padding:8px;font-size:0.8rem}
 }
+
 
 
 
